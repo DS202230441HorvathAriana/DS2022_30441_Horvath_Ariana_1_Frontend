@@ -1,0 +1,42 @@
+.welcome-page {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../images/images.jpg');
+    background-size: cover;
+}
+
+.my-devices-title { 
+    padding-top: 7px;
+    padding-left: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: 550;
+    text-shadow: 2px 2px #000;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+}
+
+.container-devices {
+    overflow-x: auto;
+    /* max-height: 100vh; */
+    margin-bottom: 50px;
+    list-style: none;
+    /* align-items: left; */
+    width: 96%;
+    margin: 10px 20px;
+    border: 2px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 10px ;
+    cursor: pointer;
+    /* min-width: 900px; */
+}
+
+.container-devices::-webkit-scrollbar{
+    display: none;
+}

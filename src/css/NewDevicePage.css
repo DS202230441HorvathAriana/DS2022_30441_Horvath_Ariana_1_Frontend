@@ -1,0 +1,98 @@
+.background {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../images/images.jpg');
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    display: flex;
+}
+
+.title-text-device { 
+    margin-top: 10vh;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    color: white;
+    font-size: 36px;
+    font-weight: 550;
+    text-shadow: 2px 2px #000;
+}
+
+#demo-multiple-name-label {
+    text-shadow: none;
+}
+
+#demo-multiple-name {
+    text-shadow: none;
+}
+
+.new-device-form {
+    width: 70%;
+    margin-top: 0;
+    max-width: 700px;
+}
+
+.device-data {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px #000;
+}
+
+.device-data-input {
+    font-family: "Lucida Console", "Lucida Sans Typewriter";
+    display: flex;
+    flex: 1;
+    align-items: center;
+    /* max-width: fit-content; */
+    width: 100%;
+    padding: 10px 0px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    background: white;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.device-data-label {
+    display: block;
+    /* text-align: center; */
+    align-items: center;
+    margin-bottom: 10px;
+
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px #000;
+}
+
+.btn-save-device {
+    display: inline-block;
+    background: #fff;
+    color: grey;
+    border: none;
+    padding: 10px 20px;
+    /* margin: 5px; */
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: inherit;
+    height: 40px;
+    width: 33%;
+    margin-left: 33%;
+}
+
+.btn-save-device:hover {
+    background: grey;
+    color: #fff;
+}

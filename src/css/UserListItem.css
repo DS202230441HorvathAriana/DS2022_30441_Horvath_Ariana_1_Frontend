@@ -1,0 +1,65 @@
+
+.user {
+    list-style: none;
+    /* align-items: left; */
+    width: 97.5%;
+    margin: 5px 5px;
+    border: 2px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 10px ;
+    cursor: pointer;
+    min-width: 900px;
+}
+
+.user-component {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+    height: 33px;
+    width: 33%;
+    margin-right: 0px;
+    color:black;
+}
+
+.role-component {
+    text-align: center;
+    margin-right: 0px;
+    font-size:12px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    padding: 5px 20px;
+    /* margin: 5px; */
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: inherit;
+    height: 40px;
+    margin-left: 20px;
+    float: right;
+}
+
+.btn:hover {
+    background: grey;
+    color: #fff;
+}
+
+#btn-delete {
+    background: #d493ae;
+    color: white;
+}
+
+#btn-update {
+    color: #d493ae;
+}
+
+#btn-delete:hover {
+    background: grey;
+    color: #fff;
+}

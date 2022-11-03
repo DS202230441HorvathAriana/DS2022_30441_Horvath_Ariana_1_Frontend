@@ -1,0 +1,102 @@
+.welcome-page {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../images/images.jpg');
+    background-size: cover;
+}
+
+.welcome-texts {
+    text-align: center;
+    display: flex;
+}
+
+.logo-text-welcome-page { 
+    margin-top: 26vh;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    color: white;
+    font-size: 50px;
+    font-weight: 550;
+    text-shadow: 2px 2px #000;
+    /* float: right;
+    width: calc(100% - 22%) */
+}
+
+.login-customer-form {
+    width: 50%;
+    margin-top: 0;
+    max-width: 500px;
+}
+
+.user-data {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px #000;
+}
+
+.user-data-label {
+    display: block;
+    /* text-align: center; */
+    align-items: center;
+    margin-bottom: 10px;
+
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px #000;
+}
+
+.user-data-input {
+    font-family: "Lucida Console", "Lucida Sans Typewriter";
+    display: flex;
+    flex: 1;
+    align-items: center;
+    /* max-width: fit-content; */
+    width: 100%;
+    padding: 10px 0px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    background: white;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.btn-login {
+    display: inline-block;
+    background: #fff;
+    color: grey;
+    border: none;
+    padding: 10px 20px;
+    /* margin: 5px; */
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: inherit;
+    height: 40px
+}
+
+.btn-login:hover {
+    background: grey;
+    color: #fff;
+}
+
+#btn-login {
+    float: left;
+    width: 49%;
+    margin-top: 30px;
+}
+  
+#btn-register {
+    float: right;
+    width: 49%;
+    margin-top: 30px;
+}

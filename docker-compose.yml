@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+
+  react:
+    image: arianahorvath30441frontend
+    ports:
+       - "3000:80"

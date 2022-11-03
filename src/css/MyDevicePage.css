@@ -1,0 +1,66 @@
+.welcome-page {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../images/images.jpg');
+    background-size: cover;
+}
+
+.my-devices-title { 
+    padding-top: 7px;
+    padding-left: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: 550;
+    text-shadow: 2px 2px #000;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+}
+
+.message {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+    height: 33px;
+    margin-left: -120%;
+    color:black;
+    text-align: left;
+}
+
+.date {
+    display: flex;
+}
+
+.date-picker {
+    margin: 10px;
+    margin-left:20px;
+}
+
+.btn-show {
+    display: inline-block;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 2px solid white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: inherit;
+    height: 30px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    margin-top: -55px;
+    margin-left: -470px;
+    z-index: 1000;
+}
+
+.btn-show:hover {
+    background-color: #d493ae;
+}

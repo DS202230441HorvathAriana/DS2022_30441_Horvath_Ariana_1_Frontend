@@ -1,0 +1,80 @@
+
+.device {
+    list-style: none;
+    width: 97.5%;
+    margin: 5px 5px;
+    border: 2px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 10px ;
+    cursor: pointer;
+    min-width: 900px;
+}
+
+.device-component2 {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+    height: 33px;
+    margin-right: 0px;
+    color:black;
+    text-align: left;
+}
+
+#dev-id {
+    width: 20%;
+}
+
+#dev-addr {
+    width: 30%;
+}
+
+#dev-client{
+    width: 20%;
+}
+
+#dev-consum{
+    width:20%;
+}
+
+#dev-nav {
+    width: 10%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#description {
+    width: 100%;
+    float: left;
+}
+.device-details {
+    width: 100%;
+}
+
+.list-component {
+    text-align: left;
+    margin-right: 0px;
+    font-size:12px;
+}
+
+.btn-nav {
+    display: inline-block;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 2px solid white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: inherit;
+    height: 40px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+.btn-nav:hover {
+    background-color: #d493ae;
+    color: white;
+}
