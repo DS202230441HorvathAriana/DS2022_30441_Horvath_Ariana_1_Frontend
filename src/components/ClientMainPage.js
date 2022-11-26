@@ -6,6 +6,9 @@ import "./../css/ClientMainPage.css";
 import {useLocation} from "react-router-dom"
 import HeaderClient from "./HeaderClient";
 import DeviceListItemClient from "./DeviceListItemClient";
+import SockJsClient from 'react-stomp';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const ClientMainPage = () => {
 
@@ -13,7 +16,14 @@ const ClientMainPage = () => {
     const {state} = useLocation();
     const clientUsername = state.clientUsername;
     const [devicesList, setDevicesList] = useState([]);
-
+    const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState("");
+    const SOCKET_URL = 'http://localhost:8080/energyUtility/ws-message';
+    
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+      
     useEffect(() => {
         const getDevices = async () => {
             await fetch(`http://localhost:8080/energyUtility/devices/${clientUsername}`)
@@ -27,6 +37,25 @@ const ClientMainPage = () => {
         getDevices()
     }, []);
 
+    let onMessageReceived = (msg) => {
+        console.log(msg.deviceId);
+        console.log(msg.clientUsername)
+        
+        if (msg.clientUsername === clientUsername) {
+            setMessage(msg.message);
+            setOpen(true); 
+        }
+    }
+    
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            setOpen(false);
+            return;
+        }
+    
+        setOpen(false);
+    };
+
     return(
         <div className='welcome-page'>
             <HeaderClient clientUsername={clientUsername}/>
@@ -39,7 +68,21 @@ const ClientMainPage = () => {
                     />
                 ))}
             </div>
-    </div>
+           
+            <SockJsClient
+                url={SOCKET_URL}
+                topics={['/topic/message']}
+                onConnect={console.log("Connected!!")}
+                onDisconnect={console.log("Disconnected!")}
+                onMessage={msg => onMessageReceived(msg)}
+                debug={false}
+            />
+            <Snackbar open={open} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                    {message}
+                </Alert>
+            </Snackbar>
+        </div>
     )
 }
 

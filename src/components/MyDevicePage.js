@@ -8,6 +8,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Moment from 'moment';
 import ReactApexChart from 'react-apexcharts'
+import SockJsClient from 'react-stomp'; 
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const MyDevicePage = () => {
 
@@ -18,6 +21,8 @@ const MyDevicePage = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [date, setDate] = useState("");
     const [consumptions, setConsumptions] = useState([]);
+    const [message, setMessage] = useState("");
+    const [open, setOpen] = useState(false);
     var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
     var consumValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     var chartConfig = {
@@ -37,6 +42,11 @@ const MyDevicePage = () => {
         ]
     };
     var [stateChart, setStateChart] = useState(chartConfig);
+    const SOCKET_URL = 'http://localhost:8080/energyUtility/ws-message';
+
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
 
     const onShowClick = async (e) => {
         e.preventDefault();
@@ -58,10 +68,24 @@ const MyDevicePage = () => {
                 console.log(consumValues);
                 setStateChart(chartConfig);
             });
-        
-
     }
  
+    let onMessageReceived = (msg) => {
+        if (msg.deviceId === device.meteringDeviceId) {
+            setMessage(msg.message);
+            setOpen(true);
+        }
+    }
+    
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            setOpen(false);
+            return;
+        }
+    
+        setOpen(false);
+    };
+
     return(
         <div className='welcome-page'>
             <HeaderClient clientUsername={clientUsername}/>
@@ -81,6 +105,19 @@ const MyDevicePage = () => {
             <div id="chart">
                 <ReactApexChart options={stateChart.options} series={stateChart.series} type="bar" height={500} width={750} />
             </div>
+            <SockJsClient
+                url={SOCKET_URL}
+                topics={['/topic/message']}
+                onConnect={console.log("Connected!!")}
+                onDisconnect={console.log("Disconnected!")}
+                onMessage={msg => onMessageReceived(msg)}
+                debug={false}
+            />
+            <Snackbar open={open} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                    {message}
+                </Alert>
+            </Snackbar>
         </div>
     )
 }
