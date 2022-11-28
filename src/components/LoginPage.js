@@ -28,7 +28,7 @@ const LoginPage = () => {
     }
 
     const registerClient = async(customer) => {
-        fetch('http://localhost:8080/energyUtility/users', {
+        fetch('http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/users', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -49,7 +49,7 @@ const LoginPage = () => {
     }
 
     const loginUser = async(customer) => {
-        await fetch('http://localhost:8080/energyUtility/user', {
+        await fetch('http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/user', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

@@ -39,7 +39,7 @@ const NewUserPage = () => {
         e.preventDefault();
         let notEmpty = await validateInput();
         if (notEmpty) {
-            fetch('http://localhost:8080/energyUtility/users', {
+            fetch('http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/users', {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',

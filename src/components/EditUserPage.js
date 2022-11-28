@@ -34,7 +34,7 @@ const EditUserPage = () => {
         e.preventDefault();
         let notEmpty = await validateInput();
         if (notEmpty) {
-            fetch(`http://localhost:8080/energyUtility/users/${oldUsername}`, {
+            fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/users/${oldUsername}`, {
                 method: "PUT",
                 headers: {
                     'Accept': 'application/json',

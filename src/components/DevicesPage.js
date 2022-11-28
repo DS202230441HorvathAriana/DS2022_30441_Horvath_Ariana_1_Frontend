@@ -17,7 +17,7 @@ const DevicesPage = () => {
 
     useEffect(() => {
         const getUsers = async () => {
-            await fetch(`http://localhost:8080/energyUtility/devices`)
+            await fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/devices`)
             .then(response => response.json())
             .then(body => {
                 setDevicesList(body);

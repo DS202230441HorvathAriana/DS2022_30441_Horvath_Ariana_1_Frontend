@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  react:
+    image: "containerregistryarianahorvath30441.azurecr.io/arianahorvath30441frontend:latest"
+    domainname: "arianahorvath30441frontend"
+    ports:
+       - 3000:3000
+    deploy: 
+          resources:
+            reservations:
+              cpus: '1'
+              memory: 2G

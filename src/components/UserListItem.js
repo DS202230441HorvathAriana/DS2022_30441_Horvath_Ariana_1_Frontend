@@ -16,7 +16,7 @@ const UserListItem = ({user, adminUsername}) => {
     }
     const onDeleteClick = async (e) => {
         e.preventDefault()
-        fetch(`http://localhost:8080/energyUtility/users/${user.username}`, {
+        fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/users/${user.username}`, {
             method: "DELETE",
             headers: {
                 'Accept': 'application/json',

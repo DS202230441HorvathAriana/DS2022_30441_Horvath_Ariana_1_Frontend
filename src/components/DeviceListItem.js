@@ -17,7 +17,7 @@ const DeviceListItem = ({device, adminUsername}) => {
     }
     const onDeleteClick = async (e) => {
         e.preventDefault()
-        fetch(`http://localhost:8080/energyUtility/devices/${device.meteringDeviceId}`, {
+        fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/devices/${device.meteringDeviceId}`, {
             method: "DELETE",
             headers: {
                 'Accept': 'application/json',
