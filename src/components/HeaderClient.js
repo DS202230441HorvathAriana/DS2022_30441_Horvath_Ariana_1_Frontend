@@ -14,7 +14,6 @@ const HeaderClient = ({clientUsername}) => {
                     <ul>
                         <li className='nav-item'>
                             <a 
-                                href='/client'
                                 onClick={(e) => navigate('/client', {
                                     state: {clientUsername: clientUsername}
                                 })}
@@ -22,10 +21,20 @@ const HeaderClient = ({clientUsername}) => {
                                 <p className='text'>My Devices</p>
                             </a>
                         </li>
-       
                         <li className='nav-item'>
                             <a 
-                                href='/' 
+                                onClick={(e) => navigate('/chat', {
+                                    state: {
+                                        username: clientUsername,
+                                        role: false
+                                    }
+                                })}
+                            >
+                                <p className='text'>Chat with Admin</p>
+                            </a>
+                        </li>
+                        <li className='nav-item'>
+                            <a 
                                 onClick={(e) => navigate('/')}
                             >
                                 <p className='text'>Log Out</p>

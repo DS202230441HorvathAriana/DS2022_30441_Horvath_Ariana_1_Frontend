@@ -1,0 +1,22 @@
+.chatpage {
+    display: flex;
+    border: 1px solid darkgrey;
+    height: 100%;
+  }
+  
+  .userslist-section {
+    flex: 1;
+  }
+  
+  .chatpage-section {
+    flex: 2;
+    border: 1px solid darkgrey;
+  }
+
+  .main {
+      height: 600px;
+  }
+
+  .container {
+    padding-top: 20px;
+  }

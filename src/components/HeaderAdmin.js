@@ -14,7 +14,6 @@ const HeaderAdmin = ({adminUsername}) => {
                 <ul>
                     <li className='nav-item'>
                         <a 
-                            href='/admin'
                             onClick={(e) => navigate('/admin', {
                                 state: {
                                     adminUsername: adminUsername
@@ -26,7 +25,6 @@ const HeaderAdmin = ({adminUsername}) => {
                     </li>
                     <li className='nav-item'>
                         <a 
-                            href='/admin/devices'
                             onClick={(e) => navigate('/admin/devices', {
                                 state: {
                                     adminUsername: adminUsername
@@ -36,10 +34,20 @@ const HeaderAdmin = ({adminUsername}) => {
                             <p className='text'>Manage Devices</p>
                         </a>
                     </li>
-
                     <li className='nav-item'>
                         <a 
-                            href='/' 
+                            onClick={(e) => navigate('/chat', {
+                                state: {
+                                    username: adminUsername,
+                                    role: true
+                                }
+                            })}
+                        >
+                            <p className='text'>Chat with Clients</p>
+                        </a>
+                    </li>
+                    <li className='nav-item'>
+                        <a 
                             onClick={(e) => navigate('/')}
                         >
                             <p className='text'>Log Out</p>

@@ -10,6 +10,7 @@ import DevicesPage from './components/DevicesPage';
 import NewDevicePage from './components/NewDevicePage';
 import EditDevicePage from './components/EditDevicePage';
 import MyDevicePage from './components/MyDevicePage';
+import ChatPage from './components/ChatPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/admin/devices/new-device" element={<NewDevicePage/>}/>
         <Route exact path="/admin/devices/edit-device" element={<EditDevicePage/>}/>
         <Route exact path="/client/device" element={<MyDevicePage/>}/>
+        <Route exact path="/chat" element={<ChatPage/>}/>
       </Routes>
     </Router>
   );
