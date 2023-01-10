@@ -113,7 +113,7 @@ export default function ChatPage() {
             <UsersList users={users} />
           </div>
           <div className="chatpage-section">
-            <Chat msgList={msgList} sendMessage={sendMessage} />
+            <Chat msgList={msgList} sendMessage={sendMessage} username={username}/>
           </div>
         </div>
       </main>

@@ -1,10 +1,38 @@
+import React from 'react';
+import { useState, useEffect } from "react";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import "./../css/Chat.css";
 
-export default function Chat({ msgList, sendMessage }) {
+export default function Chat({ msgList, sendMessage, username }) {
+  const [open, setOpen] = useState(false);
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   function handler() {
     var msg = window.msgTextArea.value;
     sendMessage(msg);
     window.msgTextArea.value = "";
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+        setOpen(false);
+        return;
+    }
+    
+    setOpen(false);
+  };
+
+  const handleChangeMessage = (event) => {
+      if (event.target.value !== "") {
+          setOpen(true);
+          return;
+      } else 
+        setOpen(false);
+      return;
   }
 
   return (
@@ -19,7 +47,7 @@ export default function Chat({ msgList, sendMessage }) {
       </div>
       <div className="chat-input">
         <div style={{ flex: "3 1 90%" }}>
-          <textarea id="msgTextArea" />
+          <textarea id="msgTextArea" onChange={handleChangeMessage}/>
         </div>
         <div
           style={{
@@ -32,6 +60,11 @@ export default function Chat({ msgList, sendMessage }) {
           <button onClick={handler}>Send</button>
         </div>
       </div>
+      <Snackbar open={open} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>            
+          {username} is typing...
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
