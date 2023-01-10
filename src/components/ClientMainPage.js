@@ -69,14 +69,14 @@ const ClientMainPage = () => {
                 ))}
             </div>
            
-            {/* <SockJsClient
+            <SockJsClient
                 url={SOCKET_URL}
                 topics={['/topic/message']}
                 onConnect={console.log("Connected!!")}
                 onDisconnect={console.log("Disconnected!")}
                 onMessage={msg => onMessageReceived(msg)}
                 debug={false}
-            /> */}
+            />
             <Snackbar open={open} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
                     {message}
