@@ -18,7 +18,7 @@ const AdminMainPage = () => {
 
     useEffect(() => {
         const getUsers = async () => {
-            await fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/users`)
+            await fetch(`http://localhost:8080/energyUtility/users`)
             .then(response => response.json())
             .then(body => {
                 console.log(body);

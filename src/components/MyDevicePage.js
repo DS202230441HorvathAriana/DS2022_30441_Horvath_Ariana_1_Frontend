@@ -42,7 +42,7 @@ const MyDevicePage = () => {
         ]
     };
     var [stateChart, setStateChart] = useState(chartConfig);
-    const SOCKET_URL = 'http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/ws-message';
+    const SOCKET_URL = 'http://localhost:8080/energyUtility/ws-message';
 
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -52,7 +52,7 @@ const MyDevicePage = () => {
         e.preventDefault();
         const dateStr = Moment(selectedDate).format('YYYY-MM-DD');
         
-        fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/consumptions/${device.meteringDeviceId}/${dateStr}`)
+        fetch(`http://localhost:8080/energyUtility/consumptions/${device.meteringDeviceId}/${dateStr}`)
             .then(response => response.json())
             .then(body => {
                 console.log(body);

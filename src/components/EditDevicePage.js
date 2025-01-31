@@ -51,7 +51,7 @@ const EditDevicePage = () => {
 
     useEffect(() => {
         const getClients = async () => {
-            await fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/clients`)
+            await fetch(`http://localhost:8080/energyUtility/clients`)
             .then(response => response.json())
             .then(body => {
                 console.log(body);
@@ -85,7 +85,7 @@ const EditDevicePage = () => {
         e.preventDefault();
         let notEmpty = await validateInput();
         if (notEmpty) {
-            fetch(`http://arianahorvath30441backend.germanywestcentral.azurecontainer.io:8080/energyUtility/devices/${state.device.meteringDeviceId}`, {
+            fetch(`http://localhost:8080/energyUtility/devices/${state.device.meteringDeviceId}`, {
                 method: "PUT",
                 headers: {
                     'Accept': 'application/json',
